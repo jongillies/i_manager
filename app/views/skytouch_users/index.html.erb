@@ -1,0 +1,31 @@
+<h1>Listing skytouch_users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Uid</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @skytouch_users.each do |skytouch_user| %>
+      <tr>
+        <td><%= skytouch_user.uid %></td>
+        <td><%= skytouch_user.first_name %></td>
+        <td><%= skytouch_user.last_name %></td>
+        <td><%= skytouch_user.email %></td>
+        <td><%= link_to 'Show', skytouch_user %></td>
+        <td><%= link_to 'Edit', edit_skytouch_user_path(skytouch_user) %></td>
+        <td><%= link_to 'Destroy', skytouch_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Skytouch user', new_skytouch_user_path %>
